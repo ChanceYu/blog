@@ -45,4 +45,10 @@ gulp.task('clean', function(cb) {
         .pipe(rimraf());
 });
 
+gulp.task('watch', function() {
+    gulp.watch('src/**/*.css', ['css']);
+    gulp.watch('src/**/*.js', ['js']);
+    gulp.watch('src/**/*.html', ['rev']);
+});
+
 gulp.task('default', sequence('clean', 'css', 'js', 'rev'));
