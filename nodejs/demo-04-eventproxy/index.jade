@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title my jade template
+  body
+    h2 NodeJS抓取：百度百家-首页新闻
+    table
+        each item, i in news
+         tr
+          td #{item.title}
+          td #{item.summary}

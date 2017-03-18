@@ -5,6 +5,8 @@ var url = require('url');
 
 var app = express();
 
+var jade = require('jade');
+
 var siteUrl = 'http://baijia.baidu.com';
 var siteUrlObj = url.parse(siteUrl, true);
 
@@ -46,18 +48,9 @@ app.get('/', function (req, response) {
       });
     });
 
-    news.forEach(function(item, idx){
-      news[idx] = '<tr>'+
-                    '<td><img src="'+ item.img +'" style="width:200px;height:120px;"></td>' +
-                    '<td><a href="'+ item.href +'">'+ item.title +'</a></td>' +
-                    '<td><p>'+ item.summary +'</p></td>' +
-                  '</tr>';
+    var html = jade.renderFile('index.jade', { news: news });
 
-    });
-
-    var resultContent = '<h2 style="text-align:center;padding:50px;">NodeJS抓取：百度百家-首页新闻</h2><table>'+ news.join('') +'</table>';
-
-    response.send(resultContent);
+    response.send(html);
   });
 });
 
