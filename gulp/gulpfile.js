@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 var rimraf = require('gulp-rimraf');
 var rev = require('gulp-rev');
 var revCollector = require('gulp-rev-collector');
-var gulpSequence = require('gulp-sequence');
+var sequence = require('gulp-sequence');
 
 gulp.task('css', function() {
     return gulp.src('./src/**/*.css')
@@ -16,11 +16,8 @@ gulp.task('css', function() {
         }))*/
         .pipe(rev())
         .pipe(gulp.dest('build'))
-        .pipe(rev.manifest('manifest.json', {
-            base: './',
-            merge: true
-        }))
-        .pipe(gulp.dest('./'));
+        .pipe(rev.manifest('manifest-css.json'))
+        .pipe(gulp.dest('./build/rev'));
 });
 
 gulp.task('js', function() {
@@ -32,16 +29,13 @@ gulp.task('js', function() {
         }))*/
         .pipe(uglify())
         .pipe(rev())
-        .pipe(gulp.dest('./build/js'))
-        .pipe(rev.manifest('manifest.json', {
-            base: './',
-            merge: true
-        }))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./build'))
+        .pipe(rev.manifest('manifest-js.json'))
+        .pipe(gulp.dest('./build/rev'));
 });
 
 gulp.task('rev', function() {
-    return gulp.src(['./manifest.json', './src/**/*.html'])
+    return gulp.src(['./build/rev/*.json', './src/**/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest('./build'));
 });
@@ -51,4 +45,4 @@ gulp.task('clean', function(cb) {
         .pipe(rimraf());
 });
 
-gulp.task('default', gulpSequence('clean', 'css', 'js', 'rev'));
+gulp.task('default', sequence('clean', 'css', 'js', 'rev'));
