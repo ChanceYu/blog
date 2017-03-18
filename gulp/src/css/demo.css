@@ -1,0 +1,12 @@
+body{
+  background: #f5f5f5;
+}
+.ui-container{
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  background: #fff;
+}
+.ui-title{
+  text-align: center;
+}

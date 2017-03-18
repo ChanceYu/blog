@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "demo for stylus",
   "dependencies": {
     "gulp": "^3.9.1",
