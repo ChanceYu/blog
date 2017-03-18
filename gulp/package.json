@@ -10,6 +10,7 @@
     "gulp-rev": "^7.1.2",
     "gulp-rev-collector": "^1.1.1",
     "gulp-rimraf": "^0.2.1",
+    "gulp-sequence": "^0.4.6",
     "gulp-uglify": "^2.1.0"
   }
 }

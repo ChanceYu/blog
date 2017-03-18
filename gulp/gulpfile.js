@@ -6,6 +6,7 @@ var rename = require('gulp-rename');
 var rimraf = require('gulp-rimraf');
 var rev = require('gulp-rev');
 var revCollector = require('gulp-rev-collector');
+var gulpSequence = require('gulp-sequence');
 
 gulp.task('css', function() {
     return gulp.src('./src/**/*.css')
@@ -50,6 +51,4 @@ gulp.task('clean', function(cb) {
         .pipe(rimraf());
 });
 
-gulp.task('default', ['clean'], function() {
-    gulp.start('css', 'js');
-});
+gulp.task('default', gulpSequence('clean', 'css', 'js', 'rev'));
