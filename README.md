@@ -2,7 +2,7 @@
 
 Personal web development demos.
 
-## awesome links :point_down:
+## Awesome links :point_down:
 
 ### Gulp
 * Gulp官网 <http://www.gulpjs.com>
