@@ -1,6 +1,6 @@
 # Developer Demo
 
-Personal web development demos.
+Personal web development demos. By ChanceYu.
 
 ## Awesome links :point_down:
 

@@ -1,7 +1,7 @@
 {
   "name": "demo",
   "version": "1.0.0",
-  "description": "node-demo for nodejs",
+  "description": "demo for nodejs",
   "main": "app.js",
   "dependencies": {
     "cheerio": "^0.17.0",

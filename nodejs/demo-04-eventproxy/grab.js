@@ -14,6 +14,27 @@ var absoluteUrl = siteUrlObj.protocol + '//' + siteUrlObj.host;
 var arr = (absoluteUrl + siteUrlObj.pathname).split('\/');
 var relativeUrl = arr.slice(0, arr.length-1).join('\/');
 
+var getNowDate = function(){
+    var date = new Date(),
+      Y = date.getFullYear(),
+      M = date.getMonth() + 1,
+      D = date.getDate(),
+      h = date.getHours(),
+      m = date.getMinutes(),
+      s = date.getSeconds(),
+      toDouble = function(n){
+          return n < 10 ? '0' + n : n;
+      };
+
+    M = toDouble(M);
+    D = toDouble(D);
+    h = toDouble(h);
+    m = toDouble(m);
+    s = toDouble(s);
+
+    return Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s;
+}
+
 app.get('/', function (req, response) {
   superagent.get(siteUrl)
   .end(function (err, res) {
@@ -42,13 +63,17 @@ app.get('/', function (req, response) {
 
       news.push({
         img: $elem.find('.feeds-item-pic img').attr('src'),
+        time: $elem.find('.tm').text(),
         title: $elem.find('h3 a').text(),
         href: $elem.find('h3 a').attr('href'),
         summary: $elem.find('.feeds-item-text1').text()
       });
     });
 
-    var html = jade.renderFile('index.jade', { news: news });
+    var html = jade.renderFile('index.jade', {
+      news: news,
+      date: getNowDate()
+    });
 
     response.send(html);
   });
