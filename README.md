@@ -8,7 +8,7 @@ Personal web development demos.
 * Gulp官网 <http://www.gulpjs.com>
 * Gulp中文网 <http://www.gulpjs.com.cn>
 * awesome-gulp <https://github.com/alferov/awesome-gulp>
-* use-gulp <https://github.com/Platform-CUF>
+* use-gulp <https://github.com/Platform-CUF/use-gulp>
 
 ### Stylus
 * Stylus官网 <http://stylus-lang.com>
