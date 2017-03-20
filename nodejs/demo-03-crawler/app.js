@@ -5,8 +5,10 @@ var superagent = require('superagent');
 var app = express();
 
 app.get('/', function(req, res, next) {
+    var url = 'http://r.qidian.com/click?style=1&dateType=3';
+
     superagent
-        .get('https://cnodejs.org/')
+        .get(url)
         .end(function(err, sres) {
             if (err) {
                 return next(err);
@@ -14,16 +16,15 @@ app.get('/', function(req, res, next) {
             var $ = cheerio.load(sres.text);
             var items = [];
 
-            $('#topic_list .topic_title').each(function(idx, element) {
+            $('.book-mid-info').each(function(idx, element) {
                 var $element = $(element);
+                var $link = $element.find('h4 a');
+                var str = '<a href="'+ $link.attr('href') +'">'+ $link.text() +'</a>';
                 
-                items.push({
-                    title: $element.attr('title'),
-                    href: $element.attr('href')
-                });
+                items.push(str);
             });
 
-            res.send(items);
+            res.send(items.join('<br>'));
         });
 });
 
