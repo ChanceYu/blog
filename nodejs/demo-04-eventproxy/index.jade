@@ -41,6 +41,9 @@ html
         a:hover{
             text-decoration: underline;
         }
+        .order{
+            color: #999;
+        }
         .time{
             color: #666;
         }
@@ -50,6 +53,7 @@ html
     table
         thead
             tr
+                th 序号
                 th 时间
                 th 标题
                 th 简介
@@ -57,10 +61,12 @@ html
             each item, i in news
              tr
               td 
+                - var n = i + 1;
+                - n = n < 10 ? '0' + n : n;
+                span.order &nbsp;&nbsp;#{n}&nbsp;&nbsp;
+              td 
                 span.time #{item.time}
               td 
                 a(href="#{item.href}") #{item.title}
               td
                 p #{item.summary}
-    script.
-        alert('抓取成功');
