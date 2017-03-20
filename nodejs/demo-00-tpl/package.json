@@ -1,9 +1,0 @@
-{
-  "name": "demo",
-  "version": "1.0.0",
-  "description": "demo for nodejs",
-  "main": "app.js",
-  "dependencies": {
-    "express": "^4.9.5"
-  }
-}
