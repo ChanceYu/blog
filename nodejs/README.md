@@ -7,3 +7,4 @@
 * [demo-05-async](demo-05-async) 使用 async 处理并发
 * [demo-06-jade](demo-06-jade) jade 模板引擎
 * [demo-07-express-generator](demo-07-express-generator) express-generator 应用生成器
+* [demo-08-express-router](demo-08-express-router) express-router 路由控制
