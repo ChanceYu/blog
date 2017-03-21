@@ -1,12 +1,12 @@
-var gulp = require('gulp');
-var minifycss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var rimraf = require('gulp-rimraf');
-var rev = require('gulp-rev');
+var gulp         = require('gulp');
+var minifycss    = require('gulp-minify-css');
+var uglify       = require('gulp-uglify');
+var concat       = require('gulp-concat');
+var rename       = require('gulp-rename');
+var rimraf       = require('gulp-rimraf');
+var rev          = require('gulp-rev');
 var revCollector = require('gulp-rev-collector');
-var sequence = require('gulp-sequence');
+var sequence     = require('gulp-sequence');
 
 gulp.task('css', function() {
     return gulp.src('./src/**/*.css')

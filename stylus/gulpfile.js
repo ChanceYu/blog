@@ -1,9 +1,9 @@
-var gulp = require('gulp');
-var data = require('gulp-data');
-var stylus = require('gulp-stylus');
+var gulp       = require('gulp');
+var data       = require('gulp-data');
+var stylus     = require('gulp-stylus');
 var sourcemaps = require('gulp-sourcemaps');
 
-var path_src = './src/css';
+var path_src   = './src/css';
 var path_build = './build/css';
  
 //编译单个 styl 文件
