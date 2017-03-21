@@ -1,17 +1,17 @@
-var express = require('express');
+var express    = require('express');
 var superagent = require('superagent');
-var cheerio = require('cheerio');
-var url = require('url');
+var cheerio    = require('cheerio');
+var url        = require('url');
+var jade       = require('jade');
 
 var app = express();
 
-var jade = require('jade');
 
-var siteUrl = 'http://baijia.baidu.com';
+var siteUrl    = 'http://baijia.baidu.com';
 var siteUrlObj = url.parse(siteUrl, true);
 
 var absoluteUrl = siteUrlObj.protocol + '//' + siteUrlObj.host;
-var arr = (absoluteUrl + siteUrlObj.pathname).split('\/');
+var arr         = (absoluteUrl + siteUrlObj.pathname).split('\/');
 var relativeUrl = arr.slice(0, arr.length-1).join('\/');
 
 var getNowDate = function(){

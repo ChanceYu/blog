@@ -1,8 +1,8 @@
-var express = require('express');
-var async = require('async');
+var express    = require('express');
+var async      = require('async');
 var superagent = require('superagent');
-var cheerio = require('cheerio');
-var url = require('url');
+var cheerio    = require('cheerio');
+var url        = require('url');
 
 var app = express();
 
@@ -15,7 +15,7 @@ app.get('/', function (req, response) {
       return console.error(err);
     }
     var topicUrls = [];
-    var topics = [];
+    var topics    = [];
     var $ = cheerio.load(res.text);
 
     $('#topic_list .topic_title').each(function (idx, element) {
