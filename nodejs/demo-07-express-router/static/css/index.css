@@ -1,0 +1,50 @@
+html, body {
+    font-family: 'Hiragino Sans GB', helvetica, 'microsoft yahei', "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+}
+* {
+    padding: 0
+}
+h2 {
+    text-align: center;
+    padding: 10px
+}
+h4 {
+    text-align: center;
+    color: #666
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 8px
+}
+th, td {
+    border-bottom: 1px solid #ccc;
+    padding: 6px
+}
+tr:hover td {
+    background: #eee
+}
+a, a:link, a:visited, a:active {
+    text-decoration: none
+}
+a:hover {
+    text-decoration: underline
+}
+.time {
+    color: #666
+}
+footer p {
+    text-align: center;
+    color: #666;
+    padding: 50px 0
+}
+nav{
+    text-align: center;
+    padding: 10px;
+}
+nav a{
+    margin: 0 10px;
+}
