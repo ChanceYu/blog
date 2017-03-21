@@ -1,0 +1,11 @@
+extends ../common/layout
+
+block content
+
+    -if(welcome)
+        h4.text-center.p-md 欢迎来到用户页面，请选择下面的用户
+    -else
+        h4.text-center.p-md #{ userName ? '你是：' + userName : '我不知道你是谁' }
+    nav.text-center
+        each item, i in users
+         a(href='/user/#{item.md5Id}') #{item.name}

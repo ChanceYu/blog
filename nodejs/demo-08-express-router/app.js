@@ -1,17 +1,19 @@
 var express = require('express');
 var config  = require('./config');
-var app     = express();
+var router  = require('./router');
 
-var configRouter = function(path){
-  return require(config.express.viewPath + path)
-};
+var app = express();
 
-app.use(express.static(config.express.staticPath));
 app.set('view engine', config.express.viewEngine);
 app.set('views',       config.express.viewPath);
 
-app.use('/',      configRouter('/index/router'));
-app.use('/about', configRouter('/about/router'));
+app.use(express.static(config.express.staticPath));
+
+for(var attr in router){
+    var path = router[attr];
+    
+    app.use(attr, require(config.express.viewPath + path));
+}
 
 
 app.listen(config.express.port, function () {
