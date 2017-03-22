@@ -17,6 +17,8 @@ Personal web development demos. By ChanceYu.
 * node-lessons <https://github.com/alsotang/node-lessons>
 * nodejs Fullstack《从零到一的进击》 <https://github.com/jollen/nodejs-fullstack-book>
 * nodejs中文教程 <http://www.runoob.com/nodejs/nodejs-tutorial.html>
+* express框架 <https://github.com/expressjs/express>
+* N-blog <https://github.com/nswbmw/N-blog>
 
 ### Stylus
 * Stylus官网 <http://stylus-lang.com>
