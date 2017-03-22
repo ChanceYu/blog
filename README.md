@@ -19,6 +19,7 @@ Personal web development demos. By ChanceYu.
 * nodejs中文教程 <http://www.runoob.com/nodejs/nodejs-tutorial.html>
 * express框架 <https://github.com/expressjs/express>
 * N-blog <https://github.com/nswbmw/N-blog>
+* nodejs 各版本支持情况 <http://node.green>
 
 ### Stylus
 * Stylus官网 <http://stylus-lang.com>
