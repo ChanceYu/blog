@@ -4,7 +4,7 @@ var users   = require(__dirname + '/users');
 var router  = express.Router();
 
 router.get('/', function(req, res){
-    res.render(__dirname + '/tpl', {
+    res.render(__dirname + '/user', {
         welcome: true,
         users: users
     });
@@ -23,7 +23,7 @@ router.get('/:md5Id', function (req, res, next) {
 
     var userName = exist ? exist.name : '';
 
-    res.render(__dirname + '/tpl', {
+    res.render(__dirname + '/user', {
         userName: userName,
         users: users
     });

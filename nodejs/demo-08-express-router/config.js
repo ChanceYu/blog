@@ -1,11 +1,13 @@
+var path       = require('path');
+
 var config     = {}
 var PRODUCTION = process.env.NODE_ENV === 'production'
 
 config.express = {
   port:       process.env.EXPRESS_PORT || 3000,
   viewEngine: 'jade',
-  viewPath:   __dirname + '/views',
-  staticPath: __dirname + '/static'
+  viewPath:   path.join(__dirname, 'views'),
+  staticPath: path.join(__dirname, 'static')
 }
 
 config.mongodb = {

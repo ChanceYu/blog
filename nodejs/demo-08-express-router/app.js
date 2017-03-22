@@ -1,4 +1,5 @@
 var express = require('express');
+var path    = require('path');
 var config  = require('./config');
 var router  = require('./router');
 
@@ -11,12 +12,12 @@ app.use(express.static(config.express.staticPath));
 
 // config router
 for(var attr in router){
-    var path = router[attr];
+    var routerPath = router[attr];
     
-    app.use(attr, require(config.express.viewPath + path));
+    app.use(attr, require(config.express.viewPath + routerPath));
 }
 
-var errorPath = __dirname + '/views/error/';
+var errorPath = path.join(__dirname, 'views/error/');
 
 // error 404
 app.use(function(req, res, next) {
