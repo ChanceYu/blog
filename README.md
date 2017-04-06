@@ -29,3 +29,10 @@ Personal web development demos. By ChanceYu.
 * npm官网 <https://www.npmjs.com>
 * npm官方文档 <https://docs.npmjs.com>
 * awesome-npm <https://github.com/sindresorhus/awesome-npm>
+
+### Vue
+* Vue官网 <https://cn.vuejs.org>
+* awesome-vue <https://github.com/vuejs/awesome-vue>
+* awesome-github-vue <https://github.com/opendigg/awesome-github-vue>
+* vuex <https://github.com/vuejs/vuex>
+* iview UI Toolkit <https://github.com/iview/iview>
